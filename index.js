@@ -111,7 +111,7 @@ export default class QRCodeScanner extends Component {
 
   componentWillReceiveProps(newProps) {
     this.setState({
-      flashMode: props.flashMode
+      flashMode: newProps.flashMode
     })
   }
   
