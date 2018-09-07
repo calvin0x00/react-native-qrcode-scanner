@@ -114,6 +114,12 @@ export default class QRCodeScanner extends Component {
     this._handleBarCodeRead = this._handleBarCodeRead.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      flashMode: newProps.flashMode
+    })
+  }
+  
   componentWillMount() {
     if (Platform.OS === 'ios') {
       Permissions.request(CAMERA_PERMISSION).then(response => {
